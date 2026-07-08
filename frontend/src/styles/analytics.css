@@ -1,0 +1,205 @@
+/* ==========================
+   Analytics Panel
+========================== */
+
+.analytics-panel{
+    background:#ffffff;
+    border:1px solid #e2e8f0;
+    border-radius:18px;
+    padding:24px;
+
+    box-shadow:
+        0 1px 3px rgba(15,23,42,.06),
+        0 10px 30px rgba(15,23,42,.08);
+}
+
+/* Title */
+
+.analytics-title{
+    margin:0;
+    font-size:24px;
+    font-weight:700;
+    color:#0f172a;
+}
+
+.analytics-updated{
+    margin-top:6px;
+    margin-bottom:24px;
+
+    font-size:13px;
+    color:#64748b;
+}
+
+/* Divider */
+
+.analytics-divider{
+    margin:28px 0;
+    border:none;
+    border-top:1px solid #e5e7eb;
+}
+
+/* KPI Grid */
+
+.analytics-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:14px;
+
+}
+
+.analytics-card{
+
+    background:#f8fafc;
+
+    border:1px solid #e2e8f0;
+
+    border-radius:14px;
+
+    padding:18px;
+
+    transition:.25s;
+
+}
+
+.analytics-card:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 10px 22px rgba(0,0,0,.08);
+
+}
+
+.analytics-card h3{
+
+    margin:0;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    color:#64748b;
+
+}
+
+.analytics-card p{
+
+    margin-top:10px;
+
+    font-size:30px;
+
+    font-weight:700;
+
+    color:#2563eb;
+
+}
+
+.analytics-percent{
+
+    display:block;
+
+    margin-top:5px;
+
+    font-size:13px;
+
+    color:#64748b;
+
+}
+
+/* Section Titles */
+
+.section-title{
+
+    margin:0 0 15px;
+
+    font-size:18px;
+
+    color:#0f172a;
+
+}
+
+/* Lists */
+
+.subreddit-list,
+.keyword-list,
+.competitor-list{
+
+    list-style:none;
+
+    padding:0;
+
+    margin:0;
+
+}
+
+.subreddit-list li,
+.keyword-list li,
+.competitor-list li{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:12px 14px;
+
+    margin-bottom:10px;
+
+    border-radius:12px;
+
+    background:#f8fafc;
+
+    border:1px solid #e2e8f0;
+
+    transition:.2s;
+
+}
+
+.subreddit-list li:hover,
+.keyword-list li:hover,
+.competitor-list li:hover{
+
+    background:#eff6ff;
+
+}
+
+.subreddit-list strong,
+.keyword-list strong,
+.competitor-list strong{
+
+    color:#2563eb;
+
+}
+
+/* Charts */
+
+.charts-container{
+
+    margin-top:25px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+.chart-card{
+
+    background:#ffffff;
+
+    border:1px solid #e2e8f0;
+
+    border-radius:16px;
+
+    padding:18px;
+
+    height:230px;
+
+    box-shadow:0 4px 18px rgba(0,0,0,.05);
+
+}

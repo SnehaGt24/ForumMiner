@@ -36,4 +36,67 @@ const likePost = async (req, res) => {
   }
 };
 
-module.exports = { likePost };
+const getHighIntentPosts = async (req, res) => {
+  try {
+    const posts = await Post.find({
+      intentScore: { $gte: 60 }
+    })
+      .sort({ intentScore: -1 })
+      .limit(10);
+
+    res.json(posts);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+
+const { generateAIReply } = require("../services/llamaService");
+
+const getAIReply = async (req, res) => {
+  try {
+    const post = await Post.findById(req.params.id);
+
+    if (!post) {
+      return res.status(404).json({ message: "Post not found" });
+    }
+
+const reply = await generateAIReply(post);
+
+    res.json({
+      postId: post._id,
+      reply,
+    });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+
+const updateLeadStatus = async (req, res) => {
+  try {
+    const { status } = req.body;
+
+    const post = await Post.findByIdAndUpdate(
+      req.params.id,
+      {
+        leadStatus: status,
+      },
+      {
+        new: true,
+      }
+    );
+
+    res.json(post);
+
+  } catch (err) {
+    res.status(500).json({
+      message: err.message,
+    });
+  }
+};
+
+module.exports = {
+  likePost,
+  getHighIntentPosts,
+  getAIReply,
+  updateLeadStatus,
+};

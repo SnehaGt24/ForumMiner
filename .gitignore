@@ -1,13 +1,19 @@
-# Backend
-backend/node_modules/
-backend/.env
+# Dependencies
+node_modules/
 
-# Frontend
-frontend/node_modules/
+# Environment Variables
+.env
 
 # Logs
 *.log
 
-# OS files
+# Build
+dist/
+build/
+
+# VS Code
+.vscode/
+
+# OS Files
 .DS_Store
 Thumbs.db

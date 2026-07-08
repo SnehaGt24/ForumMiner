@@ -1,0 +1,5 @@
+@import "./login.css";
+
+.login-left {
+  background: linear-gradient(180deg, #38bdf8, #2563eb);
+}

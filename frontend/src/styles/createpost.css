@@ -1,0 +1,53 @@
+.create-post-card {
+  background: white;
+  border-radius: 16px;
+  padding: 18px;
+
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+}
+
+/* Header */
+.composer-header h3 {
+  margin: 0 0 12px 0;
+  font-size: 16px;
+  color: #333;
+}
+
+/* Inputs */
+.create-post-card input,
+.create-post-card textarea {
+  width: 100%;
+  border: 1px solid #ddd;
+
+  border-radius: 10px;
+  padding: 10px;
+
+  margin-bottom: 10px;
+  outline: none;
+  font-size: 14px;
+}
+
+.create-post-card textarea {
+  resize: none;
+}
+
+/* Button */
+.create-post-card button {
+  background: #ff4500;
+  color: white;
+
+  border: none;
+  padding: 10px 14px;
+
+  border-radius: 10px;
+  cursor: pointer;
+
+  width: 100%;
+  font-weight: bold;
+
+  transition: 0.2s;
+}
+
+.create-post-card button:hover {
+  background: #e63e00;
+}

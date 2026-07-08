@@ -7,11 +7,17 @@ const router = express.Router();
 // Create Comment
 router.post("/", authMiddleware, async (req, res) => {
   try {
-    const { content, postId } = req.body;
+    const { text, postId } = req.body;
+
+    if (!text || !postId) {
+      return res.status(400).json({
+        message: "Text and Post ID are required"
+      });
+    }
 
     const comment = new Comment({
-      content,
-      author: req.user.id,
+      text,
+      user: req.user.id,
       post: postId
     });
 
@@ -34,7 +40,7 @@ router.get("/:postId", async (req, res) => {
     const comments = await Comment.find({
       post: req.params.postId
     })
-      .populate("author", "username email")
+      .populate("user", "username email")
       .sort({ createdAt: -1 });
 
     res.status(200).json(comments);
@@ -56,7 +62,7 @@ router.delete("/:id", authMiddleware, async (req, res) => {
       });
     }
 
-    if (comment.author.toString() !== req.user.id) {
+    if (comment.user.toString() !== req.user.id) {
       return res.status(403).json({
         message: "Not authorized to delete this comment"
       });

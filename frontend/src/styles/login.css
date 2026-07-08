@@ -1,0 +1,138 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI",sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#eef5ff,#dceeff);
+}
+
+.login-page{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:30px;
+}
+
+.login-container{
+    width:1000px;
+    background:#fff;
+    border-radius:20px;
+    overflow:hidden;
+    display:flex;
+    box-shadow:0 15px 45px rgba(0,0,0,.12);
+}
+
+.login-left{
+    width:50%;
+    background:linear-gradient(135deg,#60a5fa,#2563eb);
+    color:white;
+    padding:60px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.login-left h1{
+    font-size:42px;
+    margin-bottom:15px;
+}
+
+.login-left p{
+    line-height:1.8;
+    font-size:18px;
+    margin-bottom:30px;
+}
+
+.login-left ul{
+    list-style:none;
+}
+
+.login-left li{
+    margin:15px 0;
+    font-size:17px;
+}
+
+.login-right{
+    width:50%;
+    padding:60px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.login-right h2{
+    text-align:center;
+    color:#2563eb;
+    margin-bottom:35px;
+}
+
+.login-form{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.login-form input{
+    padding:15px;
+    border-radius:10px;
+    border:1px solid #d6d6d6;
+    font-size:15px;
+    transition:.3s;
+}
+
+.login-form input:focus{
+    outline:none;
+    border-color:#2563eb;
+    box-shadow:0 0 10px rgba(37,99,235,.2);
+}
+
+.login-form button{
+    padding:15px;
+    background:#2563eb;
+    color:white;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:17px;
+    transition:.3s;
+}
+
+.login-form button:hover{
+    background:#1d4ed8;
+}
+
+.bottom-link{
+    margin-top:25px;
+    text-align:center;
+}
+
+.bottom-link a{
+    color:#2563eb;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.bottom-link a:hover{
+    text-decoration:underline;
+}
+
+@media(max-width:900px){
+
+.login-container{
+    flex-direction:column;
+    width:100%;
+}
+
+.login-left,
+.login-right{
+    width:100%;
+}
+
+.login-left{
+    text-align:center;
+}
+}
