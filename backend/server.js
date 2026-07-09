@@ -1,3 +1,6 @@
+require("dotenv").config();
+console.log(process.env.GROQ_API_KEY);
+
 const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
@@ -11,7 +14,7 @@ const analyticsRoutes = require("./routes/analyticsRoutes");
 const subredditRoutes = require("./routes/subredditRoutes");
 const seedRoutes = require("./routes/seedRoutes");
 require("./jobs/redditScheduler");
-dotenv.config();
+
 
 const app = express();
 

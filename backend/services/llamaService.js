@@ -1,7 +1,12 @@
-const axios = require("axios");
+const Groq = require("groq-sdk");
+
+const groq = new Groq({
+  apiKey: process.env.GROQ_API_KEY,
+});
 
 const generateAIReply = async (post) => {
-const prompt = `
+
+  const prompt = `
 You are an experienced Reddit user.
 
 Write ONE natural Reddit reply.
@@ -9,15 +14,13 @@ Write ONE natural Reddit reply.
 STRICT RULES:
 
 - Never say you are an AI.
-- Never mention Llama, ChatGPT or language models.
-- Never mention "intent score", "sentiment", "competitor", "analysis", "database", "ForumMiner", or any internal system.
+- Never mention ChatGPT, Groq, Llama or language models.
 - Never invent facts.
-- Never recommend random products unless the Reddit post explicitly asks for alternatives.
-- If alternatives are requested, explain what criteria the user should compare instead of inventing product names.
-- Sound friendly and conversational.
-- Do not sound like marketing.
-- Keep the reply between 60 and 100 words.
-- Answer ONLY using the information below.
+- Never recommend products unless the user asks.
+- If alternatives are requested, explain what the user should compare.
+- Friendly.
+- Human sounding.
+- Between 60 and 100 words.
 
 Title:
 ${post.title}
@@ -25,72 +28,41 @@ ${post.title}
 Content:
 ${post.content}
 
-Reply:
-Bad Reply:
-"The intent score seems low."
-
-Bad Reply:
-"Try Llama."
-
-Bad Reply:
-"ChatGPT is better."
-
-Bad Reply:
-"Writing Assistant is the best."
-
-Good Reply:
-"It depends on which features matter most to you. I'd compare pricing, integrations and workflow before deciding."
-
 Competitor:
 ${post.competitors?.join(", ") || "None"}
 
-Intent Score:
-${post.intentScore}
-
-Sentiment:
-${post.sentiment}
-
-Reply only with the Reddit comment.
+Reply:
 `;
 
-    console.log("🔥 USING LLAMA");
-
   try {
-    console.log("Sending request to Ollama...");
 
-const response = await axios.post(
-  "http://127.0.0.1:11434/api/generate",
-  {
-    model: "llama3.2:3b",
-    prompt,
-    stream: false,
+    const completion =
+      await groq.chat.completions.create({
 
-    options: {
-      temperature: 0.3,
-      top_p: 0.8,
-      num_predict: 120
-    }
-  }
-);
+        model: "llama-3.3-70b-versatile",
 
-console.log("Received response from Ollama");
+        messages: [
+          {
+            role: "user",
+            content: prompt,
+          },
+        ],
 
-    console.log("========== OLLAMA RESPONSE ==========");
-console.log(response.data.response);
-console.log("=====================================");
+        temperature: 0.4,
 
-return response.data.response.trim();
+        max_completion_tokens: 150,
+      });
+
+    return completion.choices[0].message.content.trim();
 
   } catch (err) {
-    console.error("OLLAMA ERROR:");
-console.error(err.code);
-console.error(err.message);
 
-if (err.response) {
-  console.error(err.response.data);
-}
+    console.error(err);
+
     return "Unable to generate AI reply.";
+
   }
+
 };
 
 module.exports = {
