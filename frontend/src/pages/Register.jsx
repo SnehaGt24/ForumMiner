@@ -14,6 +14,37 @@ function Register() {
   const handleRegister = async (e) => {
     e.preventDefault();
 
+    if (!username.trim()) {
+  toast.error("Username is required.");
+  return;
+}
+
+const usernameRegex = /^[A-Za-z0-9_]{3,20}$/;
+
+if (!usernameRegex.test(username)) {
+  toast.error(
+    "Username must be 3-20 characters and contain only letters, numbers and underscore."
+  );
+  return;
+}
+
+      const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.com$/;
+
+if (!emailRegex.test(email)) {
+  toast.error("Please enter a valid .com email address.");
+  return;
+}
+
+const passwordRegex =
+/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#]).{8,}$/;
+
+if (!passwordRegex.test(password)) {
+  toast.error(
+    "Password must be at least 8 characters and contain an uppercase letter, lowercase letter, number and special character."
+  );
+  return;
+}
+
     try {
       await API.post("/auth/register", {
         username,
@@ -71,11 +102,15 @@ function Register() {
             />
 
             <input
-              type="password"
-              placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
+  type="password"
+  placeholder="Password"
+  value={password}
+  onChange={(e) => setPassword(e.target.value)}
+/>
+
+<small className="password-hint">
+  Must be at least 8 characters and include uppercase, lowercase, number and special character.
+</small>
 
             <button type="submit">
               Register

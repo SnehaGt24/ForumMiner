@@ -7,9 +7,10 @@ import { FaSearch } from "react-icons/fa";
 import { MdPostAdd } from "react-icons/md";
 import Sidebar from "../components/Sidebar";
 import AnalyticsPanel from "../components/AnalyticsPanel";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect} from "react";
 import Footer from "../components/Footer";
 import { toast } from "react-toastify";
+import { useRef } from "react";
 
 function Dashboard() {
     const location = useLocation();
@@ -22,6 +23,8 @@ function Dashboard() {
   const [filter, setFilter] = useState("all");
   const highIntentRef = useRef(null);
   const [publishing, setPublishing] = useState(false);
+  const firstPostRef = useRef(null);
+  const feedRef = useRef(null);
 
   // Pagination
   const [page, setPage] = useState(1);
@@ -96,29 +99,38 @@ const fetchHighIntentPosts = async () => {
 };
   // Search Posts
   const handleSearch = async () => {
-    if (!query) return;
-    try {
-      setPage(1);
-      if (!search.trim()) {
-        fetchPosts(page);
-        return;
-      }
+  if (!search.trim()) return;
 
-      const res = await API.get(
-        `/posts/search?q=${search}`
-      );
+  try {
+    setPage(1);
 
-      setPosts(res.data);
-    } catch (err) {
-      console.log(err);
-    }
-  };
+    const res = await API.get(`/posts/search?q=${search}`);
+
+    setPosts(res.data);
+
+setTimeout(() => {
+  firstPostRef.current?.scrollIntoView({
+    behavior: "smooth",
+    block: "center",
+  });
+}, 100);
+
+  } catch (err) {
+    console.log(err);
+  }
+};
 
   // Clear Search
   const clearSearch = () => {
     setSearch("");
     setPage(1);
     fetchPosts(1);
+    setTimeout(() => {
+  searchResultsRef.current?.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+}, 100);
   };
 
   // Create Post
@@ -193,7 +205,7 @@ const handleCreatePost = async (e) => {
 
     <div className="dashboard-layout">
 
-      <main className="feed">
+<main className="feed" ref={feedRef}>
 
  <div className="dashboard-header">
     <h1>🚀 ForumMiner Dashboard</h1>
@@ -280,13 +292,11 @@ one place.
 
 </div>
 
-<div ref={highIntentRef}>
-  <h2 className="feed-title">
-    {showHighIntent
-      ? "🔥 High Intent Opportunities"
-      : "🔥 Latest Discussions"}
-  </h2>
-</div>
+<h2 className="feed-title">
+  {showHighIntent
+    ? "🔥 High Intent Opportunities"
+    : "🔥 Latest Discussions"}
+</h2>
 
        {/* Posts */}
        {filteredPosts.length === 0 ? (
@@ -296,9 +306,14 @@ one place.
       : "No discussions found."}
   </p>
 ) : (
-filteredPosts.map((post) => (
-      <PostCard key={post._id} post={post} />
-  ))
+filteredPosts.map((post, index) => (
+  <div
+    key={post._id}
+    ref={index === 0 ? firstPostRef : null}
+  >
+    <PostCard post={post} />
+  </div>
+))
 )}
 
        {/* Pagination */}

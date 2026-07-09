@@ -3,3 +3,10 @@
 .login-left {
   background: linear-gradient(180deg, #38bdf8, #2563eb);
 }
+.password-hint {
+  display: block;
+  margin-top: 6px;
+  margin-bottom: 12px;
+  font-size: 12px;
+  color: #64748b;
+}

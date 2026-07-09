@@ -22,6 +22,34 @@ router.post("/register", async (req, res) => {
         message: "All fields are required"
       });
     }
+
+const usernameRegex = /^[A-Za-z0-9_]{3,20}$/;
+
+if (!usernameRegex.test(username)) {
+  return res.status(400).json({
+    message:
+      "Username must be 3-20 characters and contain only letters, numbers, and underscore."
+  });
+}
+
+const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.com$/;
+
+if (!emailRegex.test(email)) {
+  return res.status(400).json({
+    message: "Please enter a valid email address."
+  });
+}
+
+const passwordRegex =
+/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#]).{8,}$/;
+
+if (!passwordRegex.test(password)) {
+  return res.status(400).json({
+    message:
+      "Password must be at least 8 characters and contain uppercase, lowercase, number and special character."
+  });
+}
+
     // Check if user already exists
     const userExists = await User.findOne({ email });
 
@@ -61,6 +89,13 @@ router.post("/login", async (req, res) => {
 
       // Validation
     if (!email || !password) {
+      const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.com$/;
+
+if (!emailRegex.test(email)) {
+  return res.status(400).json({
+    message: "Please enter a valid .com email address."
+  });
+}
       return res.status(400).json({
         message: "Email and password are required"
       });

@@ -16,6 +16,13 @@ function Login() {
 
     setLoading(true);
 
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.com$/;
+
+if (!emailRegex.test(email)) {
+  alert("Please enter a valid .com email address.");
+  return;
+}
+
     try {
       const res = await API.post("/auth/login", {
         email,
