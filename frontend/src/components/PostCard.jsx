@@ -143,10 +143,14 @@ const [leadStatus, setLeadStatus] = useState(
         content: editContent,
       });
 
-      alert("Post updated successfully");
-      setIsEditing(false);
+alert("Post updated successfully");
 
-      window.location.reload();
+// Update the post on the screen immediately
+post.title = editTitle;
+post.content = editContent;
+
+setIsEditing(false);
+
     } catch (err) {
       console.error(err);
       alert("Unable to update post.");
