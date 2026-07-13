@@ -17,3 +17,7 @@ build/
 # OS Files
 .DS_Store
 Thumbs.db
+
+.vite/
+dist/
+node_modules/

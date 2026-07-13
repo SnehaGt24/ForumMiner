@@ -1,161 +1,260 @@
-# 🚀 ForumMiner
+# 🚀 ForumMiner - AI-Powered Reddit Intent Monitoring Platform
 
-ForumMiner is an AI-powered MERN Stack application that helps users discover high-intent discussions, analyze community conversations, detect competitors, and generate intelligent AI replies. The platform combines forum-style discussions with AI and analytics to help users identify valuable business opportunities.
+<p align="center">
+
+![React](https://img.shields.io/badge/Frontend-React-61DAFB?logo=react)
+![Node.js](https://img.shields.io/badge/Backend-Node.js-339933?logo=node.js)
+![Express](https://img.shields.io/badge/Framework-Express-000000?logo=express)
+![MongoDB](https://img.shields.io/badge/Database-MongoDB-47A248?logo=mongodb)
+![License](https://img.shields.io/badge/License-MIT-green)
+
+</p>
+
+> **ForumMiner is an AI-powered Reddit Intent Monitoring Platform that discovers high-intent customer conversations, analyzes sentiment, tracks competitor mentions, and helps businesses identify potential leads using Reddit discussions.**
 
 ---
 
-## 📌 Features
+# 🌐 Live Demo
 
-### 🔐 Authentication
+### 🚀 Frontend
+
+https://forum-miner.vercel.app
+
+### ⚙ Backend API
+
+https://forumminer-backend.onrender.com
+
+---
+
+# 📑 Table of Contents
+
+- About
+- Features
+- Screenshots
+- Tech Stack
+- Project Architecture
+- Installation
+- Environment Variables
+- API Endpoints
+- Folder Structure
+- Future Enhancements
+- Author
+
+---
+
+# 📖 About
+
+ForumMiner continuously monitors Reddit discussions and identifies conversations where users are:
+
+- Looking for software alternatives
+- Asking for recommendations
+- Comparing products
+- Reporting problems
+- Expressing buying intent
+
+The platform combines AI-powered sentiment analysis with intent scoring to help businesses discover valuable customer opportunities.
+
+---
+
+# ✨ Features
+
+## 🔐 Authentication
+
 - User Registration
-- User Login
+- Secure Login
 - JWT Authentication
-- Protected Routes
-- Edit Profile
-- Change Password
+- Password Encryption
 
 ---
 
-### 📝 Forum Features
+## 💬 Discussion Management
 
-- Create Discussion
-- Edit Discussion
-- Delete Discussion
-- Like / Unlike Posts
+- Create Posts
+- Edit Posts
+- Delete Posts
+- Like Posts
+- Comment System
+
+---
+
+## 🔍 Smart Search
+
 - Search Discussions
-- Pagination
-- My Posts
+- Instant Results
+- Reddit Post Search
+- Community Filtering
 
 ---
 
-### 🤖 AI Features
+## 🤖 AI Features
 
-- AI Reply Generation using **Llama 3.2**
-- AI replies for:
-  - Reddit Posts
-  - Forum Posts
-- Context-aware response generation
-- Loading indicators while generating replies
-
----
-
-### 🔥 Lead Discovery
-
-- High Intent Detection
-- Intent Score
-- Lead Status Tracking
-- Competitor Detection
 - Sentiment Analysis
+- Intent Score Detection
+- Competitor Detection
+- AI Opportunity Ranking
 
 ---
 
-### 📊 Analytics Dashboard
+## 📊 Analytics Dashboard
 
-- Total Posts
-- High Intent Posts
-- Average Intent Score
-- Average Sentiment
-
-Charts Included:
-
-- Pie Chart – Posts by Source
-- Bar Chart – Sentiment Distribution
-- Bar Chart – Top Subreddits
-- Line Chart – Intent Trend
+- Total Discussions
+- Positive vs Negative Sentiment
+- Intent Distribution
+- Top Subreddits
+- Competitor Analytics
 
 ---
 
-### 👤 User Profile
+## 🌐 Reddit Integration
 
-- Profile Statistics
-- Edit Profile
-- Change Password
-- View My Posts
+- Import Reddit Posts
+- Fetch Trending Discussions
+- Store Reddit Metadata
+- Monitor Opportunities
 
 ---
 
-## 🛠 Tech Stack
+## 🎯 High Intent Feed
 
-### Frontend
+Automatically identifies posts where users are:
 
-- React.js
-- React Router DOM
+- Looking for alternatives
+- Asking for recommendations
+- Facing product issues
+- Ready to purchase
+
+---
+
+# 📷 Screenshots
+
+## 🔐 Login Page
+
+![Login](README-assets/login.png)
+
+---
+
+## 🏠 Dashboard
+
+![Dashboard](README-assets/dashboard.png)
+
+---
+
+## 📊 Analytics
+
+![Analytics](README-assets/analytics.png)
+
+---
+
+## 🔥 High Intent Opportunities
+
+![High Intent](README-assets/high-intent.png)
+
+---
+
+## 🌐 Reddit Integration
+
+![Reddit](README-assets/reddit.png)
+
+---
+
+## 🤖 AI Suggestions
+
+![AI Reply](README-assets/ai-reply.png)
+
+---
+
+# 🛠 Tech Stack
+
+## Frontend
+
+- React
+- Vite
+- React Router
 - Axios
-- React Icons
 - React Toastify
 - Chart.js
-- React ChartJS 2
 
-### Backend
+---
+
+## Backend
 
 - Node.js
 - Express.js
 - MongoDB
 - Mongoose
-- JWT Authentication
+- JWT
 - bcrypt.js
 
-### AI
+---
 
-- Ollama
-- Llama 3.2 (3B)
+## AI Services
+
+- Groq API
+- Sentiment Analysis
+- Intent Detection
+- Competitor Detection
 
 ---
 
-## 📂 Project Structure
+## Deployment
+
+Frontend
+
+- Vercel
+
+Backend
+
+- Render
+
+Database
+
+- MongoDB Atlas
+
+---
+
+# 🏗 Project Architecture
 
 ```
-ForumMiner/
-│
-├── client/
-│   ├── components/
-│   ├── pages/
-│   ├── services/
-│   ├── styles/
-│   └── App.jsx
-│
-├── server/
-│   ├── controllers/
-│   ├── middleware/
-│   ├── models/
-│   ├── routes/
-│   ├── services/
-│   └── server.js
-│
-└── README.md
+                 Reddit API
+                     │
+                     ▼
+          Reddit Data Collector
+                     │
+                     ▼
+        Intent & Sentiment Engine
+                     │
+                     ▼
+            MongoDB Database
+                     │
+        ┌────────────┴────────────┐
+        ▼                         ▼
+ Express REST API         Analytics Engine
+        │                         │
+        └────────────┬────────────┘
+                     ▼
+               React Frontend
 ```
 
 ---
 
-## ⚙ Installation
+# ⚙ Installation
 
-### Clone Repository
+## Clone Repository
 
 ```bash
-git clone https://github.com/yourusername/forumminer.git
+git clone https://github.com/SnehaGt24/ForumMiner.git
 ```
 
-### Backend
+---
+
+## Backend
 
 ```bash
-cd server
+cd backend
 npm install
-npm start
 ```
 
-### Frontend
-
-```bash
-cd client
-npm install
-npm run dev
-```
-
----
-
-## 🔑 Environment Variables
-
-Create a `.env` file inside the **server** folder.
+Create a `.env`
 
 ```env
 PORT=5000
@@ -163,67 +262,145 @@ PORT=5000
 MONGO_URI=your_mongodb_connection_string
 
 JWT_SECRET=your_secret_key
+
+GROQ_API_KEY=your_api_key
 ```
 
----
-
-## 🧠 AI Setup
-
-Install Ollama.
-
-Pull Llama 3.2:
+Run
 
 ```bash
-ollama pull llama3.2:3b
+npm start
 ```
 
-Run Ollama:
+---
+
+## Frontend
 
 ```bash
-ollama serve
+cd frontend
+npm install
+npm run dev
 ```
 
 ---
 
-## 📸 Screenshots
+# 🔑 Environment Variables
 
-Add screenshots of:
+```env
+PORT=
 
-- Login Page
-- Dashboard
-- High Intent Page
-- Analytics Dashboard
-- Profile Page
-- AI Reply Generation
+MONGO_URI=
+
+JWT_SECRET=
+
+GROQ_API_KEY=
+```
 
 ---
 
-## 🚀 Future Enhancements
+# 📡 Main API Routes
 
-- Live Reddit API Integration
-- Real-time Notifications
-- Email Alerts
-- Export Analytics
-- AI Conversation Thread Support
+## Authentication
+
+```
+POST /api/auth/register
+
+POST /api/auth/login
+
+GET /api/auth/profile
+```
+
+---
+
+## Posts
+
+```
+GET /api/posts
+
+POST /api/posts
+
+PUT /api/posts/:id
+
+DELETE /api/posts/:id
+
+GET /api/posts/search
+```
+
+---
+
+## Reddit
+
+```
+GET /api/reddit
+
+POST /api/reddit/import
+```
+
+---
+
+## Analytics
+
+```
+GET /api/analytics
+
+GET /api/posts/high-intent
+```
+
+---
+
+# 📂 Folder Structure
+
+```
+ForumMiner
+
+backend
+│
+├── config
+├── controllers
+├── middleware
+├── models
+├── routes
+├── services
+├── jobs
+└── server.js
+
+frontend
+│
+├── components
+├── pages
+├── services
+├── styles
+├── assets
+└── App.jsx
+```
+
+---
+
+# 🚀 Future Enhancements
+
+- AI Reply Generator
+- Email Notifications
+- Export Reports
+- User Profiles
 - Dark Mode
-- Multi-language Support
+- Advanced Analytics
+- More Social Media Integrations
+- Live Reddit Streaming
 
 ---
 
-## 👩‍💻 Author
+# 👩‍💻 Author
 
-**Sneha GT**
+## Sneha GT
 
 Computer Science Engineering Student
 
-LinkedIn:
-https://www.linkedin.com/in/sneha-gt
+GitHub
 
-GitHub:
 https://github.com/SnehaGt24
 
 ---
 
-## 📄 License
+# ⭐ If you like this project
 
-This project is developed for academic and educational purposes.
+Give it a ⭐ on GitHub!
