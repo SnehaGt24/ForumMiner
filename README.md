@@ -37,21 +37,15 @@ The platform combines secure authentication, intelligent analytics, Reddit integ
 
 ---
 
-# ✨ Key Features
+## Features
 
-## 🔐 Authentication
-
-- JWT Authentication
-- Secure User Registration
-- Login & Logout
-- Password Encryption (bcrypt)
+### Authentication
+- Secure JWT Authentication
+- User Registration and Login
+- Password Encryption using bcrypt
 - Protected Routes
-- Session Management
 
----
-
-## 💬 Discussion Management
-
+### Discussion Management
 - Create Discussions
 - Edit Discussions
 - Delete Discussions
@@ -59,225 +53,80 @@ The platform combines secure authentication, intelligent analytics, Reddit integ
 - Comment System
 - Pagination
 - Search Discussions
-- User-owned Post Management
 
----
-
-## 🔍 Smart Search
-
-- Search Discussions
-- Instant Search Results
-- Community Filtering
-- Keyword Search
-- Reddit Search Integration
-
----
-
-## 🤖 AI Intelligence
-
-- Intent Score Detection
-- Customer Sentiment Analysis
-- Competitor Mention Detection
-- Buying Intent Recognition
-- Lead Opportunity Identification
-- AI-assisted Discussion Analysis
-
----
-
-## 📊 Analytics Dashboard
-
-- Total Discussions
-- Total Users
-- Positive vs Negative Sentiment
-- Intent Distribution
-- Trending Topics
-- Top Communities
-- Community Statistics
-
----
-
-## 🌐 Reddit Integration
-
+### Reddit Integration
 - Import Reddit Posts
-- Reddit Metadata Storage
-- Upvote Tracking
-- Comment Tracking
-- Subreddit Monitoring
-- Community Analytics
+- Fetch Posts from Subreddits
+- Store Reddit Metadata
+- Track Upvotes and Comments
+- Community Monitoring
+
+### AI Features
+- Intent Detection
+- Sentiment Analysis
+- Competitor Mention Detection
+- Buying Intent Identification
+- Lead Opportunity Discovery
+
+### Analytics
+- Dashboard Statistics
+- Trending Topics
+- Community Insights
+- High-Intent Discussions
 
 ---
 
-## 🎯 High Intent Feed
+## Technology Stack
 
-Automatically identifies discussions where users are:
-
-- Looking for software alternatives
-- Asking for recommendations
-- Comparing competitors
-- Reporting product issues
-- Requesting solutions
-- Ready to purchase products
-- Seeking implementation advice
-
----
-
-# 🛠 Technology Stack
-
-## Frontend
-
+### Frontend
 - React.js
-- React Router DOM
+- React Router
 - Axios
 - React Icons
 - CSS3
-- Chart.js
 
----
-
-## Backend
-
+### Backend
 - Node.js
 - Express.js
 - JWT Authentication
 - bcrypt.js
-- REST APIs
 
----
-
-## Database
-
+### Database
 - MongoDB Atlas
-- Mongoose ODM
+- Mongoose
 
----
-
-## AI & Analytics
-
+### AI & Data Analysis
+- Reddit API
 - Intent Detection
 - Sentiment Analysis
-- Keyword Matching
-- Opportunity Scoring
-- Competitor Detection
+- Keyword Analysis
+
+### Deployment
+- Vercel
+- Render
 
 ---
 
-## APIs
+## Project Structure
 
-- Reddit API
-
----
-
-## Deployment
-
-- Vercel (Frontend)
-- Render (Backend)
-
----
-
-# 🏗 System Architecture
-
-```text
-                    Reddit API
-                        │
-                        ▼
-              Reddit Data Collector
-                        │
-                        ▼
-              Intent Detection Engine
-                        │
-            ┌───────────┴───────────┐
-            ▼                       ▼
-   Sentiment Analysis      Competitor Detection
-            │                       │
-            └───────────┬───────────┘
-                        ▼
-                  MongoDB Atlas
-                        │
-                        ▼
-                Express REST API
-                        │
-                        ▼
-                 React Frontend
-                        │
-                        ▼
-             Analytics Dashboard
 ```
-
-
-# 🔗 REST API Endpoints
-
-## Authentication
-
-```http
-POST /api/auth/register
-POST /api/auth/login
-```
-
----
-
-## Posts
-
-```http
-GET    /api/posts
-POST   /api/posts
-PUT    /api/posts/:id
-DELETE /api/posts/:id
-POST   /api/posts/:id/like
-```
-
----
-
-## Comments
-
-```http
-GET    /api/comments/:postId
-POST   /api/comments
-DELETE /api/comments/:id
-```
-
----
-
-## Reddit
-
-```http
-GET  /api/reddit/:subreddit
-POST /api/reddit/import
-```
-
----
-
-## Analytics
-
-```http
-GET /api/analytics
-GET /api/high-intent
-```
-
----
-
-# 📂 Project Structure
-
-```text
-ForumMiner
-│
-├── frontend
-│   ├── src
-│   │   ├── components
-│   │   ├── pages
-│   │   ├── services
-│   │   ├── styles
-│   │   ├── assets
-│   │   └── App.jsx
-│   │
+ForumMiner/
+├── frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── services/
+│   │   ├── styles/
+│   │   └── assets/
 │   └── package.json
 │
-├── backend
-│   ├── controllers
-│   ├── middleware
-│   ├── models
-│   ├── routes
-│   ├── config
-│   ├── utils
+├── backend/
+│   ├── controllers/
+│   ├── middleware/
+│   ├── models/
+│   ├── routes/
+│   ├── config/
+│   ├── utils/
 │   ├── server.js
 │   └── package.json
 │
@@ -286,42 +135,48 @@ ForumMiner
 
 ---
 
-# 🚀 Getting Started
+## Installation
 
-## Clone Repository
+### Clone the repository
 
 ```bash
 git clone https://github.com/SnehaGt24/ForumMiner.git
+
+cd ForumMiner
 ```
 
 ---
 
-## Install Dependencies
+### Install Frontend
 
 ```bash
-cd ForumMiner
-
-npm install
-
 cd frontend
-npm install
 
-cd ../backend
 npm install
 ```
 
 ---
 
-## Environment Variables
+### Install Backend
 
-Create a `.env` file inside the backend folder.
+```bash
+cd ../backend
+
+npm install
+```
+
+---
+
+## Configure Environment Variables
+
+Create a `.env` file inside the **backend** folder.
 
 ```env
 PORT=5000
 
-MONGO_URI=your_mongodb_connection
+MONGO_URI=your_mongodb_connection_string
 
-JWT_SECRET=your_secret_key
+JWT_SECRET=your_jwt_secret
 
 REDDIT_CLIENT_ID=your_client_id
 
@@ -330,40 +185,115 @@ REDDIT_CLIENT_SECRET=your_client_secret
 
 ---
 
-## Run the Application
-
-Backend
+## Run the Backend
 
 ```bash
+cd backend
+
 npm run server
 ```
 
-Frontend
+---
+
+## Run the Frontend
 
 ```bash
+cd frontend
+
 npm run dev
 ```
 
 ---
 
-# 👩‍💻 Author
+## How It Works
 
-**Sneha G T**
-
-Computer Science & Engineering Student
-
-Presidency University, Bengaluru
-
-# 📄 License
-
-This project is licensed under the MIT License.
+1. Users register and log in securely using JWT Authentication.
+2. The dashboard allows users to create, edit, delete, search, and manage discussions.
+3. Reddit posts are imported using the Reddit API.
+4. The application analyzes imported discussions for sentiment, intent, and competitor mentions.
+5. High-intent discussions are highlighted to identify potential business opportunities.
+6. Analytics dashboards display community insights, trending topics, and discussion statistics.
 
 ---
 
-<div align="center">
+## REST API Endpoints
 
-### ⭐ If you found this project useful, consider giving it a Star on GitHub!
+### Authentication
 
-Built with ❤️ using React, Node.js, Express & MongoDB.
+```
+POST /api/auth/register
 
-</div>
+POST /api/auth/login
+```
+
+### Posts
+
+```
+GET    /api/posts
+
+POST   /api/posts
+
+PUT    /api/posts/:id
+
+DELETE /api/posts/:id
+
+POST   /api/posts/:id/like
+```
+
+### Comments
+
+```
+GET    /api/comments/:postId
+
+POST   /api/comments
+
+DELETE /api/comments/:id
+```
+
+### Reddit
+
+```
+GET  /api/reddit/:subreddit
+
+POST /api/reddit/import
+```
+
+### Analytics
+
+```
+GET /api/analytics
+
+GET /api/high-intent
+```
+
+---
+
+## Future Improvements
+
+- Dark Mode
+- AI Reply Suggestions
+- Real-time Notifications
+- Advanced Search Filters
+- Email Alerts
+- Team Collaboration
+- Export Analytics Reports
+- Google Authentication
+- Progressive Web App (PWA)
+
+---
+
+## Author
+
+**Sneha G T**
+
+Computer Science and Engineering
+
+Presidency University
+
+GitHub: https://github.com/SnehaGt24
+
+---
+
+## License
+
+This project was developed for educational and learning purposes.
