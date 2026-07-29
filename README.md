@@ -203,82 +203,6 @@ Automatically identifies discussions where users are:
              Analytics Dashboard
 ```
 
----
-
-# ⚙ Application Workflow
-
-```text
-User Login
-     │
-     ▼
-JWT Authentication
-     │
-     ▼
-Dashboard
-     │
- ┌───┴───────────────┐
- ▼                   ▼
-Create Posts    Reddit Import
- │                   │
- ▼                   ▼
-MongoDB        AI Processing
- │                   │
- └───────┬───────────┘
-         ▼
-Analytics Dashboard
-```
-
----
-
-# 📸 Screenshots
-
-## 🔐 Login
-
-<p align="center">
-<img src="README-assets/login.png" width="900">
-</p>
-
----
-
-## 🏠 Dashboard
-
-<p align="center">
-<img src="README-assets/dashboard.png" width="900">
-</p>
-
----
-
-## 📊 Analytics Dashboard
-
-<p align="center">
-<img src="README-assets/analytics.png" width="900">
-</p>
-
----
-
-## 🎯 High Intent Opportunities
-
-<p align="center">
-<img src="README-assets/high-intent.png" width="900">
-</p>
-
----
-
-## 🌐 Reddit Integration
-
-<p align="center">
-<img src="README-assets/reddit.png" width="900">
-</p>
-
----
-
-## 🤖 AI Suggestions
-
-<p align="center">
-<img src="README-assets/ai-reply.png" width="900">
-</p>
-
----
 
 # 🔗 REST API Endpoints
 
@@ -362,28 +286,6 @@ ForumMiner
 
 ---
 
-# ⚡ Feature Overview
-
-| Feature | Status |
-|----------|:------:|
-| JWT Authentication | ✅ |
-| Protected Routes | ✅ |
-| CRUD Discussions | ✅ |
-| Search | ✅ |
-| Pagination | ✅ |
-| Likes | ✅ |
-| Comments | ✅ |
-| User Profiles | ✅ |
-| Reddit Integration | ✅ |
-| Intent Detection | ✅ |
-| Sentiment Analysis | ✅ |
-| Competitor Detection | ✅ |
-| Analytics Dashboard | ✅ |
-| High Intent Feed | ✅ |
-| Responsive UI | ✅ |
-
----
-
 # 🚀 Getting Started
 
 ## Clone Repository
@@ -444,21 +346,6 @@ npm run dev
 
 ---
 
-# 🚀 Future Roadmap
-
-- 🌙 Dark Mode
-- 🔔 Real-time Notifications
-- 🤖 AI Reply Suggestions
-- 📈 Advanced Analytics
-- 📩 Email Alerts
-- 📤 Export Reports
-- 👥 Team Collaboration
-- 🔐 Google Authentication
-- 📱 Progressive Web App (PWA)
-- 📊 Advanced Dashboard Visualizations
-
----
-
 # 👩‍💻 Author
 
 **Sneha G T**
@@ -466,16 +353,6 @@ npm run dev
 Computer Science & Engineering Student
 
 Presidency University, Bengaluru
-
-**GitHub**
-
-https://github.com/SnehaGt24
-
-**LinkedIn**
-
-(Add your LinkedIn Profile)
-
----
 
 # 📄 License
 
