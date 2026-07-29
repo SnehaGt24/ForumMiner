@@ -2,9 +2,9 @@
 
 # 🚀 ForumMiner
 
-### AI-Powered Reddit Intent Monitoring & Lead Discovery Platform
+### AI-Powered Reddit Intelligence Platform for Intent Detection, Lead Discovery & Community Analytics
 
-Discover high-intent Reddit conversations, analyze customer sentiment, monitor competitors, and identify sales opportunities using AI.
+Monitor Reddit discussions, identify buying intent, analyse customer sentiment, detect competitor mentions, and discover high-value business opportunities using AI.
 
 <br>
 
@@ -29,27 +29,28 @@ Discover high-intent Reddit conversations, analyze customer sentiment, monitor c
 
 # 📖 About
 
-ForumMiner is an intelligent Reddit monitoring platform built to help startups, businesses, and developers discover valuable customer conversations across Reddit.
+ForumMiner is an AI-powered Reddit intelligence platform designed to help startups, businesses, developers, and product teams discover valuable customer conversations across Reddit.
 
-Instead of manually browsing thousands of posts, ForumMiner automatically imports discussions, analyzes user intent, performs sentiment analysis, detects competitor mentions, and highlights posts where users are actively looking for recommendations or alternatives.
+Instead of manually browsing thousands of discussions, ForumMiner automatically imports Reddit posts, performs AI-powered intent detection, sentiment analysis, competitor monitoring, and identifies conversations where users are actively looking for products, alternatives, recommendations, or solutions.
 
-The platform combines **AI-powered text analysis**, **analytics dashboards**, and **Reddit integration** into a single modern web application.
+The platform combines secure authentication, intelligent analytics, Reddit integration, and an interactive dashboard into a modern full-stack web application.
 
 ---
 
 # ✨ Key Features
 
-### 🔐 Authentication
+## 🔐 Authentication
 
-- Secure JWT Authentication
-- User Registration
-- Login System
-- Password Encryption
+- JWT Authentication
+- Secure User Registration
+- Login & Logout
+- Password Encryption (bcrypt)
 - Protected Routes
+- Session Management
 
 ---
 
-### 💬 Discussion Management
+## 💬 Discussion Management
 
 - Create Discussions
 - Edit Discussions
@@ -57,29 +58,33 @@ The platform combines **AI-powered text analysis**, **analytics dashboards**, an
 - Like Posts
 - Comment System
 - Pagination
+- Search Discussions
+- User-owned Post Management
 
 ---
 
-### 🔍 Smart Search
+## 🔍 Smart Search
 
 - Search Discussions
 - Instant Search Results
-- Reddit Search
 - Community Filtering
+- Keyword Search
+- Reddit Search Integration
 
 ---
 
-### 🤖 AI Intelligence
+## 🤖 AI Intelligence
 
 - Intent Score Detection
-- Sentiment Analysis
-- Competitor Detection
+- Customer Sentiment Analysis
+- Competitor Mention Detection
 - Buying Intent Recognition
 - Lead Opportunity Identification
+- AI-assisted Discussion Analysis
 
 ---
 
-### 📊 Analytics Dashboard
+## 📊 Analytics Dashboard
 
 - Total Discussions
 - Total Users
@@ -87,102 +92,85 @@ The platform combines **AI-powered text analysis**, **analytics dashboards**, an
 - Intent Distribution
 - Trending Topics
 - Top Communities
+- Community Statistics
 
 ---
 
-### 🌐 Reddit Integration
+## 🌐 Reddit Integration
 
 - Import Reddit Posts
 - Reddit Metadata Storage
-- Upvotes Tracking
+- Upvote Tracking
 - Comment Tracking
 - Subreddit Monitoring
+- Community Analytics
 
 ---
 
-### 🎯 High Intent Feed
+## 🎯 High Intent Feed
 
-Automatically identifies discussions where users are
+Automatically identifies discussions where users are:
 
 - Looking for software alternatives
 - Asking for recommendations
-- Reporting product issues
 - Comparing competitors
-- Ready to purchase
+- Reporting product issues
+- Requesting solutions
+- Ready to purchase products
+- Seeking implementation advice
 
 ---
 
-# 🎥 Demo
+# 🛠 Technology Stack
 
-> Replace this GIF after recording your application.
+## Frontend
 
-<p align="center">
-
-<img src="README-assets/demo.gif" width="900">
-
-</p>
-
----
-
-# 📸 Screenshots
-
-## Login
-
-<p align="center">
-
-<img src="README-assets/login.png" width="900">
-
-</p>
+- React.js
+- React Router DOM
+- Axios
+- React Icons
+- CSS3
+- Chart.js
 
 ---
 
-## Dashboard
+## Backend
 
-<p align="center">
-
-<img src="README-assets/dashboard.png" width="900">
-
-</p>
-
----
-
-## Analytics
-
-<p align="center">
-
-<img src="README-assets/analytics.png" width="900">
-
-</p>
+- Node.js
+- Express.js
+- JWT Authentication
+- bcrypt.js
+- REST APIs
 
 ---
 
-## High Intent Opportunities
+## Database
 
-<p align="center">
-
-<img src="README-assets/high-intent.png" width="900">
-
-</p>
+- MongoDB Atlas
+- Mongoose ODM
 
 ---
 
-## Reddit Integration
+## AI & Analytics
 
-<p align="center">
-
-<img src="README-assets/reddit.png" width="900">
-
-</p>
+- Intent Detection
+- Sentiment Analysis
+- Keyword Matching
+- Opportunity Scoring
+- Competitor Detection
 
 ---
 
-## AI Suggestions
+## APIs
 
-<p align="center">
+- Reddit API
 
-<img src="README-assets/ai-reply.png" width="900">
+---
 
-</p>
+## Deployment
+
+- Vercel (Frontend)
+- Render (Backend)
 
 ---
 
@@ -192,7 +180,7 @@ Automatically identifies discussions where users are
                     Reddit API
                         │
                         ▼
-             Reddit Data Collector
+              Reddit Data Collector
                         │
                         ▼
               Intent Detection Engine
@@ -203,16 +191,173 @@ Automatically identifies discussions where users are
             │                       │
             └───────────┬───────────┘
                         ▼
-                 MongoDB Atlas
+                  MongoDB Atlas
                         │
                         ▼
-               Express REST API
+                Express REST API
                         │
                         ▼
-                  React Frontend
+                 React Frontend
                         │
                         ▼
-              Analytics Dashboard
+             Analytics Dashboard
+```
+
+---
+
+# ⚙ Application Workflow
+
+```text
+User Login
+     │
+     ▼
+JWT Authentication
+     │
+     ▼
+Dashboard
+     │
+ ┌───┴───────────────┐
+ ▼                   ▼
+Create Posts    Reddit Import
+ │                   │
+ ▼                   ▼
+MongoDB        AI Processing
+ │                   │
+ └───────┬───────────┘
+         ▼
+Analytics Dashboard
+```
+
+---
+
+# 📸 Screenshots
+
+## 🔐 Login
+
+<p align="center">
+<img src="README-assets/login.png" width="900">
+</p>
+
+---
+
+## 🏠 Dashboard
+
+<p align="center">
+<img src="README-assets/dashboard.png" width="900">
+</p>
+
+---
+
+## 📊 Analytics Dashboard
+
+<p align="center">
+<img src="README-assets/analytics.png" width="900">
+</p>
+
+---
+
+## 🎯 High Intent Opportunities
+
+<p align="center">
+<img src="README-assets/high-intent.png" width="900">
+</p>
+
+---
+
+## 🌐 Reddit Integration
+
+<p align="center">
+<img src="README-assets/reddit.png" width="900">
+</p>
+
+---
+
+## 🤖 AI Suggestions
+
+<p align="center">
+<img src="README-assets/ai-reply.png" width="900">
+</p>
+
+---
+
+# 🔗 REST API Endpoints
+
+## Authentication
+
+```http
+POST /api/auth/register
+POST /api/auth/login
+```
+
+---
+
+## Posts
+
+```http
+GET    /api/posts
+POST   /api/posts
+PUT    /api/posts/:id
+DELETE /api/posts/:id
+POST   /api/posts/:id/like
+```
+
+---
+
+## Comments
+
+```http
+GET    /api/comments/:postId
+POST   /api/comments
+DELETE /api/comments/:id
+```
+
+---
+
+## Reddit
+
+```http
+GET  /api/reddit/:subreddit
+POST /api/reddit/import
+```
+
+---
+
+## Analytics
+
+```http
+GET /api/analytics
+GET /api/high-intent
+```
+
+---
+
+# 📂 Project Structure
+
+```text
+ForumMiner
+│
+├── frontend
+│   ├── src
+│   │   ├── components
+│   │   ├── pages
+│   │   ├── services
+│   │   ├── styles
+│   │   ├── assets
+│   │   └── App.jsx
+│   │
+│   └── package.json
+│
+├── backend
+│   ├── controllers
+│   ├── middleware
+│   ├── models
+│   ├── routes
+│   ├── config
+│   ├── utils
+│   ├── server.js
+│   └── package.json
+│
+└── README.md
 ```
 
 ---
@@ -222,17 +367,126 @@ Automatically identifies discussions where users are
 | Feature | Status |
 |----------|:------:|
 | JWT Authentication | ✅ |
-| User Profiles | ✅ |
+| Protected Routes | ✅ |
 | CRUD Discussions | ✅ |
-| Likes | ✅ |
-| Comments | ✅ |
 | Search | ✅ |
 | Pagination | ✅ |
+| Likes | ✅ |
+| Comments | ✅ |
+| User Profiles | ✅ |
 | Reddit Integration | ✅ |
-| Sentiment Analysis | ✅ |
 | Intent Detection | ✅ |
+| Sentiment Analysis | ✅ |
+| Competitor Detection | ✅ |
 | Analytics Dashboard | ✅ |
 | High Intent Feed | ✅ |
-| Responsive Design | ✅ |
+| Responsive UI | ✅ |
 
 ---
+
+# 🚀 Getting Started
+
+## Clone Repository
+
+```bash
+git clone https://github.com/SnehaGt24/ForumMiner.git
+```
+
+---
+
+## Install Dependencies
+
+```bash
+cd ForumMiner
+
+npm install
+
+cd frontend
+npm install
+
+cd ../backend
+npm install
+```
+
+---
+
+## Environment Variables
+
+Create a `.env` file inside the backend folder.
+
+```env
+PORT=5000
+
+MONGO_URI=your_mongodb_connection
+
+JWT_SECRET=your_secret_key
+
+REDDIT_CLIENT_ID=your_client_id
+
+REDDIT_CLIENT_SECRET=your_client_secret
+```
+
+---
+
+## Run the Application
+
+Backend
+
+```bash
+npm run server
+```
+
+Frontend
+
+```bash
+npm run dev
+```
+
+---
+
+# 🚀 Future Roadmap
+
+- 🌙 Dark Mode
+- 🔔 Real-time Notifications
+- 🤖 AI Reply Suggestions
+- 📈 Advanced Analytics
+- 📩 Email Alerts
+- 📤 Export Reports
+- 👥 Team Collaboration
+- 🔐 Google Authentication
+- 📱 Progressive Web App (PWA)
+- 📊 Advanced Dashboard Visualizations
+
+---
+
+# 👩‍💻 Author
+
+**Sneha G T**
+
+Computer Science & Engineering Student
+
+Presidency University, Bengaluru
+
+**GitHub**
+
+https://github.com/SnehaGt24
+
+**LinkedIn**
+
+(Add your LinkedIn Profile)
+
+---
+
+# 📄 License
+
+This project is licensed under the MIT License.
+
+---
+
+<div align="center">
+
+### ⭐ If you found this project useful, consider giving it a Star on GitHub!
+
+Built with ❤️ using React, Node.js, Express & MongoDB.
+
+</div>
