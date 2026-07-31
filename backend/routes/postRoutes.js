@@ -135,7 +135,8 @@ router.get("/", async (req, res) => {
 
     // Total number of posts
     const totalPosts = await Post.countDocuments();
-
+    console.log("TOTAL POSTS:", totalPosts);
+    
     // Fetch paginated posts
     const posts = await Post.find()
       .populate("author", "username email")

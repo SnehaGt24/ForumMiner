@@ -70,7 +70,7 @@ useEffect(() => {
   // Fetch Posts
   const fetchPosts = async (pageNo = 1) => {
     try {
-      const res = await API.get(`/posts?page=${pageNo}&limit=5`);
+      const res = await API.get(`/posts?page=${pageNo}&limit=30`);
 
       setPosts(res.data.posts);
       setTotalPages(res.data.totalPages);
@@ -174,6 +174,11 @@ const handleCreatePost = async (e) => {
     setPublishing(false);
   }
 };
+
+console.log("Posts:", posts.length);
+console.log("High Intent:", highIntentPosts.length);
+console.log("Filter:", filter);
+console.log("Current Page:", page);
 
   const filteredPosts = (showHighIntent ? highIntentPosts : posts).filter(
   (post) => {
@@ -298,26 +303,30 @@ one place.
     : "🔥 Latest Discussions"}
 </h2>
 
-       {/* Posts */}
-       {filteredPosts.length === 0 ? (
+{/* Posts */}
+{filteredPosts.length === 0 ? (
   <p className="empty-state">
     {showHighIntent
       ? "No high intent opportunities found."
       : "No discussions found."}
   </p>
 ) : (
-filteredPosts.map((post, index) => (
-  <div
-    key={post._id}
-    ref={index === 0 ? firstPostRef : null}
-  >
-    <PostCard post={post} />
-  </div>
-))
+  <>
+    <p>Total posts on this page: {filteredPosts.length}</p>
+
+    {filteredPosts.map((post, index) => (
+      <div
+        key={post._id}
+        ref={index === 0 ? firstPostRef : null}
+      >
+        <PostCard post={post} />
+      </div>
+    ))}
+  </>
 )}
 
        {/* Pagination */}
-{!showHighIntent && (
+{!showHighIntent && totalPages > 1 && (
 <div className="pagination">
 
   <button
