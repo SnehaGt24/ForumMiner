@@ -51,10 +51,23 @@ Reply:
 
         temperature: 0.4,
 
-        max_completion_tokens: 150,
+        max_completion_tokens: 300,
       });
 
-    return completion.choices[0].message.content.trim();
+    const message = completion.choices?.[0]?.message;
+
+console.log("🤖 GROQ MESSAGE:", message);
+
+const reply =
+  message?.content?.trim() ||
+  message?.reasoning?.trim() ||
+  "";
+
+if (!reply) {
+  throw new Error("Groq returned an empty response");
+}
+
+return reply;
 
 } catch (err) {
   console.error("❌ GROQ ERROR");
