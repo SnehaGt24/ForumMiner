@@ -37,22 +37,21 @@ Reply:
 
   try {
 
-    const completion =
-      await groq.chat.completions.create({
+const completion = await groq.chat.completions.create({
+  model: "openai/gpt-oss-120b",
 
-        model: "openai/gpt-oss-120b",
+  messages: [
+    {
+      role: "user",
+      content: prompt,
+    },
+  ],
 
-        messages: [
-          {
-            role: "user",
-            content: prompt,
-          },
-        ],
+  temperature: 0.4,
+  max_completion_tokens: 300,
 
-        temperature: 0.4,
-
-        max_completion_tokens: 300,
-      });
+  include_reasoning: false,
+});
 
     const message = completion.choices?.[0]?.message;
 
