@@ -65,22 +65,35 @@ if (!passwordRegex.test(password)) {
       <div className="login-container">
 
         <div className="login-left">
-          <h1>🚀 Join ForumMiner</h1>
 
-          <p>
-            Create your account and start discovering
-            high-intent Reddit conversations.
-          </p>
+  <div className="brand">
 
-          <ul>
-            <li>📊 Analytics Dashboard</li>
-            <li>🔥 Intent Monitoring</li>
-            <li>🏆 Competitor Tracking</li>
-            <li>😊 Sentiment Analysis</li>
-            <li>🤖 AI Suggestions</li>
-          </ul>
-        </div>
+    <h1>🚀 ForumMiner</h1>
 
+    <h3>AI-Powered Reddit Intelligence</h3>
+
+    <p>
+      Create your account and start discovering
+      high-intent Reddit discussions using Artificial Intelligence.
+    </p>
+
+    <div className="features">
+
+      <div>📊 Analytics Dashboard</div>
+
+      <div>🔥 Intent Monitoring</div>
+
+      <div>🏆 Competitor Tracking</div>
+
+      <div>😊 Sentiment Analysis</div>
+
+      <div>🤖 AI Suggestions</div>
+
+    </div>
+
+  </div>
+
+</div>
         <div className="login-right">
 
           <h2>Create Account</h2>

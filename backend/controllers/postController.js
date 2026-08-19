@@ -53,21 +53,34 @@ const getHighIntentPosts = async (req, res) => {
 const { generateAIReply } = require("../services/llamaService");
 
 const getAIReply = async (req, res) => {
+  console.log("🔥 getAIReply CONTROLLER HIT");
+
   try {
     const post = await Post.findById(req.params.id);
+
+    console.log("📌 Post found:", post?._id);
 
     if (!post) {
       return res.status(404).json({ message: "Post not found" });
     }
 
-const reply = await generateAIReply(post);
+    console.log("🤖 Calling generateAIReply...");
+
+    const reply = await generateAIReply(post);
+
+    console.log("✅ AI REPLY:", reply);
 
     res.json({
       postId: post._id,
       reply,
     });
+
   } catch (err) {
-    res.status(500).json({ message: err.message });
+    console.error("🔥 CONTROLLER ERROR:", err);
+
+    res.status(500).json({
+      message: err.message,
+    });
   }
 };
 

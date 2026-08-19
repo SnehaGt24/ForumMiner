@@ -4,6 +4,7 @@ const groq = new Groq({
   apiKey: process.env.GROQ_API_KEY,
 });
 
+
 const generateAIReply = async (post) => {
 
   const prompt = `
@@ -55,13 +56,15 @@ Reply:
 
     return completion.choices[0].message.content.trim();
 
-  } catch (err) {
+} catch (err) {
+  console.error("❌ GROQ ERROR");
+  console.error("Message:", err.message);
+  console.error("Status:", err.status);
+  console.error("Code:", err.code);
+  console.error("Full error:", err);
 
-    console.error(err);
-
-    return "Unable to generate AI reply.";
-
-  }
+  throw err;
+}
 
 };
 

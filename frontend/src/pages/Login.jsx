@@ -53,32 +53,58 @@ if (!emailRegex.test(email)) {
   return (
     <div className="login-page">
       <div className="login-container">
-        <div className="login-left">
-          <h1>🚀 ForumMiner</h1>
+<div className="login-left">
 
-          <p>
-            Reddit Intent Monitoring & Community Intelligence Platform
-          </p>
+  <div className="brand">
 
-          <ul>
-            <li>🔥 Detect High Intent Leads</li>
-            <li>📊 Analytics Dashboard</li>
-            <li>🏆 Competitor Tracking</li>
-            <li>😊 Sentiment Analysis</li>
-            <li>🤖 AI Suggestions</li>
-          </ul>
-        </div>
+    <h1>🚀 ForumMiner</h1>
+
+    <h3>AI-Powered Reddit Intelligence</h3>
+
+    <p>
+      Create your account and start discovering
+      high-intent Reddit discussions using Artificial Intelligence.
+    </p>
+
+    <div className="features">
+
+      <div>📊 Analytics Dashboard</div>
+
+      <div>🔥 Intent Monitoring</div>
+
+      <div>🏆 Competitor Tracking</div>
+
+      <div>😊 Sentiment Analysis</div>
+
+      <div>🤖 AI Suggestions</div>
+
+    </div>
+
+  </div>
+
+</div>
 
         <div className="login-right">
-          <h2>Login</h2>
+          <div className="login-header">
+  <h2>Welcome Back 👋</h2>
 
+  <h3>
+    Sign in to continue to ForumMiner
+  </h3>
+</div>
+<br></br>
           <form onSubmit={handleLogin} className="login-form">
-            <input
-              type="email"
-              placeholder="Email"
+            <label>Email Address</label>
+
+<input
+type="email"
+placeholder="Enter your email"
+
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
+
+            <label>Password</label>
 
             <input
               type="password"
